@@ -1,0 +1,42 @@
+#define tiempo1 10
+
+int seg;
+int min=0;
+
+task main (){
+
+     while (true) {
+           RotateMotor(OUT_B,5,6);
+           Wait(tiempo1);
+
+
+
+            seg++;
+            ClearScreen();
+            NumOut(60,30,seg);
+            TextOut(50,30,":");
+            NumOut(40,30,min);
+           if (seg%5==0) {
+           PlayTone(50,80);
+
+
+           }
+
+           if (seg==59){
+           ClearScreen();
+           min++;
+           seg=0;
+           PlayTone(50,80);
+           Wait(100);
+           PlayTone(50,80);
+           Wait(100);
+           PlayTone(50,80);
+             NumOut(60,30,seg);
+             TextOut(50,30,":");
+             NumOut(40,30,min);
+
+            }
+
+
+     }
+}
